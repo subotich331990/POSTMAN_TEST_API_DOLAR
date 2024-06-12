@@ -1,6 +1,5 @@
 <p align="center">
 <a href="https://www.postman.com/"><img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-320x132.png" /></a>
-  <strong> + CLI</strong>
 </p>
 
 <br/>
