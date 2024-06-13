@@ -1,13 +1,9 @@
 <p align="center">
-<a href="https://www.postman.com/"><img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-320x132.png" /></a>
+  <a href="https://www.postman.com/"><img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-320x132.png" /></a>
 </p>
 
 <br/>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Postman_CLI-orange?style=plastic&logo=Postman&labelColor=black">
-  <a href="https://www.linkedin.com/in/ajvsubotich/"><img src="https://img.shields.io/badge/LinkedIn-%230073b2?style=plastic&logo=LinkedIn&label=Alejandro%20Valdez&labelColor=black"></a>
-</p>
-<br>
-<p>
-</p>
+  <img src="https://img.shields.io/badge/Postman_CLI-orange?style=plastic&logo=Postman&labelColor=black">  
+  <a href="https://www.linkedin.com/in/ajvsubotich/"><img src="https://img.shields.io/badge/LinkedIn-%230073b2?style=plastic&logo=LinkedIn&label=Alejandro%20Valdez&labelColor=black"></a></p>
