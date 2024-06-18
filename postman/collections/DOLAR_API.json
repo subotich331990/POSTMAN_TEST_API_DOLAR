@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "92aa04bc-1500-4645-ad90-c12e8407bacf",
+		"name": "DOLAR_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "15904144-92aa04bc-1500-4645-ad90-c12e8407bacf"
+	},
+	"item": [
+		{
+			"name": "ALL PRICES - /v1/dolares",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5eae484-5357-4ea8-8491-de64bf37b105",
+						"exec": [
+							"pm.test(\"GET_ALL_001-.Expect status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"GET_ALL_002-.Expect [moneda, casa, nombre] fields to be a string\", function () {",
+							"    const responseData = pm.response.json()",
+							"",
+							"    responseData.forEach((item) => {",
+							"        pm.expect(item.moneda).to.be.a('string')",
+							"        pm.expect(item.casa).to.be.a('string')",
+							"        pm.expect(item.nombre).to.be.a('string')",
+							"    })",
+							"});",
+							"",
+							"pm.test(\"GET_ALL_003-.Expect [compra, venta] fields to be a number\", function () {",
+							"    const responseData = pm.response.json()",
+							"",
+							"    responseData.forEach((item) => {",
+							"        pm.expect(item.compra).to.be.a('number')",
+							"        pm.expect(item.venta).to.be.a('number')",
+							"    })",
+							"});",
+							"",
+							"pm.test(\"GET_ALL_004-.Expect fields to not be empty\", function () {",
+							"    const responseData = pm.response.json()",
+							"",
+							"    responseData.forEach((item) => {",
+							"        pm.expect(item.moneda).to.not.be.empty;",
+							"        pm.expect(item.casa).to.not.be.empty;",
+							"        pm.expect(item.nombre).to.not.be.empty;",
+							"        pm.expect(String(item.compra)).to.not.be.empty;",
+							"        pm.expect(String(item.venta)).to.not.be.empty;",
+							"        pm.expect(item.fechaActualizacion).to.not.be.empty;",
+							"    })",
+							"})",
+							"",
+							"pm.test(\"Prueba Git\", function () {",
+							"console.log(\"Subida desde postman\")",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1dd32133-cd70-4b72-9f63-b79f8bbc3d47",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "e9757a63-a343-47db-a68f-886c2557233d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/v1/dolares",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"v1",
+						"dolares"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OFFICIAL PRICE - /v1/dolares/oficial",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OFFICIAL_PRICE_001-.Expect Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"OFFICIAL_PRICE_002-.Expect jsonSchema to be correct\", () => {\r",
+							"    const expectedObject = {\r",
+							"        \"type\": \"object\",\r",
+							"        \"properties\": {\r",
+							"            \"moneda\":             { \"type\": \"string\" },\r",
+							"            \"casa\":               { \"type\": \"string\" },\r",
+							"            \"nombre\":             { \"type\": \"string\" },\r",
+							"            \"compra\":             { \"type\": \"number\" },\r",
+							"            \"venta\":              { \"type\": \"number\" },\r",
+							"            \"fechaActualizacion\": { \"type\": \"string\", \"format\": \"date-time\" },\r",
+							"        },\r",
+							"        \"required\": [\"moneda\", \"casa\", \"nombre\", \"compra\", \"venta\", \"fechaActualizacion\"]\r",
+							"    };\r",
+							"\r",
+							"    pm.response.to.have.jsonSchema(expectedObject)\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"id": "d330b79e-102b-40d3-a157-122aafa0c261"
+					}
+				}
+			],
+			"id": "ef5eff4d-451c-4e6f-8bba-d0745c607879",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/v1/dolares/oficial",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"v1",
+						"dolares",
+						"oficial"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
