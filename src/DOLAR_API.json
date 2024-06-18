@@ -11,6 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "4ca37c5f-ebb8-43bc-8ad1-e6576a4b7a0f",
 						"exec": [
 							"pm.test(\"GET_ALL_001-.Expect status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -35,10 +36,10 @@
 							"    })",
 							"});",
 							"",
-							"pm.test(\"GET_ALL_004-.Expect fields to not be empty\", function(){",
+							"pm.test(\"GET_ALL_004-.Expect fields to not be empty\", function () {",
 							"    const responseData = pm.response.json()",
 							"",
-							"    responseData.forEach((item)=> {",
+							"    responseData.forEach((item) => {",
 							"        pm.expect(item.moneda).to.not.be.empty;",
 							"        pm.expect(item.casa).to.not.be.empty;",
 							"        pm.expect(item.nombre).to.not.be.empty;",
@@ -46,22 +47,25 @@
 							"        pm.expect(String(item.venta)).to.not.be.empty;",
 							"        pm.expect(item.fechaActualizacion).to.not.be.empty;",
 							"    })",
+							"})",
+							"",
+							"pm.test(\"Prueba Git\", function () {",
+							"console.log(\"Subida desde postman\")",
 							"})"
 						],
 						"type": "text/javascript",
-						"packages": {},
-						"id": "4ca37c5f-ebb8-43bc-8ad1-e6576a4b7a0f"
+						"packages": {}
 					}
 				},
 				{
 					"listen": "prerequest",
 					"script": {
+						"id": "e59bdb43-436c-4dc8-931b-10abc2740e48",
 						"exec": [
 							""
 						],
 						"type": "text/javascript",
-						"packages": {},
-						"id": "e59bdb43-436c-4dc8-931b-10abc2740e48"
+						"packages": {}
 					}
 				}
 			],
