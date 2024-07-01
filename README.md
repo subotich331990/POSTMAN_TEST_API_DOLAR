@@ -58,6 +58,4 @@ Imagenes utilizadas:
 
 <a src="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a>
 
-<a src="https://assets.getpostman.com/">https://www.geeksforgeeks.org/</a>
-
 
